@@ -35,4 +35,4 @@ app = BUNDLE(coll,
              name='OXNote.app',
              icon='resources/designs/default/OXNote.icns',
              bundle_identifier='de.bartl3by.OXNote',
-             version='0.1.2')
+             version='0.1.4-dev')

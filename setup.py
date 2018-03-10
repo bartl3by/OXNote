@@ -13,7 +13,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
         name='OXNote',
-        version='0.1.2',
+        version='0.1.4-dev',
         author='bartl3by',
         author_email='bartl3by@gmail.com',
         url='https://github.com/bartl3by/OXNote',

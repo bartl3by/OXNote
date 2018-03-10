@@ -20,6 +20,30 @@ OXNote is a desktop application for Open-Xchange AppSuite users designed for tak
 
 ![OXNote Screenshot](resources/screenshots/oxnote_screenshot_3.png?raw=true "OXNote Screenshot")
 
+### Features
+
+| Feature | Status | Version |
+| ------- | ------ | ------- |
+| Richtext Editing | **Supported** | 0.1.2-alpha |
+| Drag & Drop of Richtext Content | **Supported** | 0.1.2-alpha |
+| Copy / Paste of Richtext Content | **Supported** | 0.1.2-alpha |
+| Automatic Note Export to PDF for AppSuite Preview | **Supported** | 0.1.2-alpha |
+| Synchronization to Remote Account by using the OX Drive Synchronization Interface | **Supported** | 0.1.2-alpha |
+| Using OXNote on multiple Clients | **Supported** | 0.1.2-alpha |
+| Offline Functionality | **Supported** | 0.1.2-alpha |
+| Find & Replace in the Note Editor | Planned | - |
+| Settings Menu for Account Configuration | Planned | - |
+| Application Settings | Planned | - |
+| Note Version Management | Planned | - |
+| Note Information Widget | Planned | - |
+| Multiple Accounts | Planned | - |
+| Inlining of HTML Resources during Drag & Drop | Planned | - |
+| Trash Folder Support | Planned | - |
+| Public Note Sharing | Planned | - |
+| In-AppSuite Note Sharing | Planned | - |
+| Tagging | Planned | - |
+| Search | Planned | - |
+
 ## <a name="installation"></a>Installation
 
 ### Prerequisites
