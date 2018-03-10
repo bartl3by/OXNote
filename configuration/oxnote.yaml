@@ -1,0 +1,11 @@
+---
+version: 1.2
+extended_logging:
+  requests_debug_level: 0
+application:
+  directories:
+    workspace: '.oxnote'
+    accounts: '.oxnote/accounts'
+    temporary: '.oxnote/tmp'
+  settings:
+    preview_content_length_maximum: 400

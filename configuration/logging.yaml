@@ -1,0 +1,68 @@
+---
+version: 1.0
+disable_existing_loggers: False
+formatters:
+  simple:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  detail:
+    format: '%(asctime)s - %(levelname)s - File: %(filename)s - %(funcName)s() - Line: %(lineno)d -  %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: simple
+    stream: ext://sys.stdout
+  all:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: simple
+    backupCount: 1
+    filename: .oxnote/log/oxnote.log
+    maxBytes: 10485760
+    encoding: utf8
+  synchronization:
+    class: logging.handlers.RotatingFileHandler
+    level: INFO
+    formatter: simple
+    backupCount: 1
+    filename: .oxnote/log/synchronization.log
+    maxBytes: 10485760
+    encoding: utf8
+  warning:
+    class: logging.handlers.RotatingFileHandler
+    level: WARNING
+    formatter: detail
+    backupCount: 1
+    filename: .oxnote/log/warning.log
+    maxBytes: 10485760
+    encoding: utf8
+  debug:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: simple
+    backupCount: 1
+    filename: .oxnote/log/debug.log
+    maxBytes: 10485760
+    encoding: utf8
+loggers:
+  all:
+    handlers: [all]
+    propagate: True
+  appsuite_api_wrapper.drive_client:
+    handlers: [synchronization]
+    propagate: True
+  warning:
+    handlers: [warning]
+    propagate: True
+  debug:
+    handlers: [debug]
+    propagate: True
+  PyQt5:
+    handlers: [warning]
+    propagate: False
+root:
+  level: DEBUG
+  handlers: [console, all, warning, debug]
+appsuite_api_wrapper.drive_client:
+  level: INFO
+  handlers: [synchronization]

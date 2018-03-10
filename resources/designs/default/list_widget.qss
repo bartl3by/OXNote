@@ -1,0 +1,62 @@
+* {
+	background-color: none;
+    font-family: Helvetica;
+    font-size: 13pt;
+    spacing: 0px;
+    border: none;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+QWidget#list_widget {
+    height: 180px;
+    min-height: 180px;
+    max-height: 180px;
+	min-width: 200px;
+	max-width: 500px;
+}
+
+QLabel#label_title {
+    font-size: 15pt;
+    height: 30px;
+    min-height: 30px;
+    max-height: 30px;
+	min-width: 200px;
+	max-width: 500px;
+    font-weight: bold;
+}
+
+QWidget#widget_content_preview {
+    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    min-width: 200px;
+    max-width: 500px;
+}
+
+QLabel#label_preview_text {
+    qproperty-alignment: 'AlignLeft | AlignTop';
+    font-size: 10pt;
+    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
+}
+
+QLabel#label_preview_image {
+    qproperty-alignment: 'AlignRight | AlignTop';
+    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    max-width: 105px;
+}
+
+QLabel#label_icons {
+    height: 30px;
+    min-height: 30px;
+    max-height: 30px;
+	min-width: 200px;
+	max-width: 500px;
+}

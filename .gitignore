@@ -1,0 +1,49 @@
+# Python
+*.pyc
+.cache
+.Python
+env
+build
+develop-eggs
+dist
+downloads
+eggs
+.eggs
+lib
+lib64
+parts
+sdist
+var
+*.egg-info
+.installed.cfg
+*.egg
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Translations
+*.mo
+
+# IDE
+.idea
+
+# Testing
+.tox
+
+# Environment
+*.DS_STORE
+.bash_history
+
+# Application data
+log
+tmp
+.oxnote
+
+# Packaging
+/OXNote.spec
+png2icns

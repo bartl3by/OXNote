@@ -1,0 +1,175 @@
+* {
+    background-color: white;
+	font-family: Helvetica;
+	font-size: 13pt;
+    padding: 0px;
+    margin: 0px;
+    spacing: 0px;
+}
+
+MainWindow {
+    width: 800px;
+    height: 600px;
+    min-width: 800px;
+    min-height: 600px;
+}
+
+QListWidget#list_widget_notelist {
+    background-color: lightgrey;
+	min-width: 240px;
+	max-width: 500px;
+}
+
+QListWidget#list_widget_notelist::item {
+	color: rgba(0, 0, 0, 0);
+	min-width: 240px;
+	max-width: 500px;
+	height: 180px;
+	min-height: 180px;
+	max-height: 180px;
+	border-bottom: 1px solid darkgrey;
+	border-right: 1px solid darkgrey;
+}
+
+QListWidget#list_widget_notelist::item:selected {
+	background-color: lightsteelblue;
+	min-height: 180px;
+	max-height: 180px;
+}
+
+QToolButton#tool_button_toolbar_top_sync {
+    icon-size: 18px;
+    color: lightgrey;
+    background-color: none;
+    border: none;
+    border-color: lightgrey;
+    height: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+}
+
+QLineEdit#tags_line_edit {
+    color: grey;
+    border: 1px solid lightgrey;
+    border-left: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 18px;
+    min-height: 18px;
+    max-height: 18px;
+    width: 352px;
+    min-width: 352px;
+    max-width: 352px;
+}
+
+QSpinBox#spin_box_font_size {
+    color: grey;
+    border: 1px solid lightgrey;
+    border-left: none;
+    padding-left: 5px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+}
+
+QFontComboBox#font_combo_box_editor {
+    color: grey;
+    border: 1px solid lightgrey;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 225px;
+    min-width: 225px;
+    max-width: 225px;
+}
+
+QLineEdit#line_edit_subject {
+    color: black;
+    border: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 18pt;
+}
+
+EmbeddedMimeTextEdit#text_edit_editor {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-left: 5px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#line_separator_editor_top {
+    color: rgb(105, 105, 105);
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+QWidget#widget_toolbar_top {
+    background-color: rgb(49, 50, 52);
+}
+
+QLineEdit#line_edit_search {
+    background-color: lightgrey;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: 1px solid white;
+}
+
+QWidget#widget_toolbar_left {
+    background-color: rgb(49, 50, 52);
+}
+
+#widget_toolbar_left QToolButton {
+    icon-size: 28px;
+    color: lightgrey;
+    background-color: steelblue;
+    border: none;
+    border-color: lightgrey;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+}
+
+#stacked_widget_detail_toolbar QToolButton {
+    icon-size: 14px;
+    font-size: 10pt;
+    color: grey;
+    border: 1px solid lightgrey;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 18px;
+    min-width: 18px;
+    max-width: 18px;
+    height: 18px;
+    min-height: 18px;
+    max-height: 18px;
+}

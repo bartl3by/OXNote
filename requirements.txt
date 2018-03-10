@@ -1,0 +1,9 @@
+pyqt5
+requests
+urllib3
+simplejson
+keyring
+qtpy
+wheel
+ruamel.yaml
+python-slugify

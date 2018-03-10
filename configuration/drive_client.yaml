@@ -1,0 +1,14 @@
+---
+version: 1.2
+synchronization:
+  state_filename: 'state.yaml'
+api:
+  client_identifier: 'OXNote'
+  compatibility:
+    api_version: 7
+    client_version: 1
+  defaults:
+    oxnote_home_folder:
+      name: 'OXNote'
+    application_data_folder:
+      name: 'OXNote/.oxnote'
