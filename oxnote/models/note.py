@@ -11,7 +11,7 @@ import typing
 import uuid
 
 from PyQt5.QtCore import QSizeF
-from PyQt5.QtGui import QTextDocument, QTextFormat, QTextImageFormat
+from PyQt5.QtGui import QTextCursor, QTextDocument
 from PyQt5.QtPrintSupport import QPrinter
 from ruamel.yaml.comments import CommentedMap
 from ruamel.yaml.scalarstring import SingleQuotedScalarString
@@ -215,15 +215,20 @@ class Note(object):
         pdf_printer = QPrinter(QPrinter.ScreenResolution)
         pdf_printer.setOutputFormat(QPrinter.PdfFormat)
         pdf_printer.setPaperSize(QPrinter.Letter)
-        pdf_printer.setPageMargins(0.925, 0.8, 0.5, 0.8, QPrinter.Inch)
+        pdf_printer.setPageMargins(0.56, 0.56, 0.56, 0.56, QPrinter.Inch)
         pdf_printer.setOutputFileName(preview_filename)
 
         pdf_paper_size = QSizeF()
         pdf_paper_size.setWidth(pdf_printer.width())
         pdf_paper_size.setHeight(pdf_printer.height())
 
-        pdf_document = QTextDocument()
-        pdf_document.setHtml(self.html_content)
+        pdf_document: QTextDocument = QTextDocument()
+        pdf_cursor: QTextCursor = QTextCursor(pdf_document)
+        pdf_cursor.movePosition(QTextCursor.Start)
+        pdf_cursor.insertHtml('<h1>{}</h1><hr><br>'.format(self._title))
+        pdf_cursor.movePosition(QTextCursor.End)
+        pdf_cursor.insertHtml(self.html_content)
+
         pdf_document.setMetaInformation(QTextDocument.DocumentTitle, self._title)
         pdf_document.setPageSize(pdf_paper_size)
 

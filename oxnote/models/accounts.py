@@ -32,7 +32,7 @@ class AccountManager(object):
                 self.load_all_account_configurations()
             except FileNotFoundError as e:
                 self.__cache = {}
-                logger.warning(e)
+                logger.info(e)
 
     def get_account(self, account_id: str) -> 'Account':
         return self.__cache[account_id] if account_id in self.__cache else None

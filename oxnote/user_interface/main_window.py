@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+from functools import partial
 import logging
 import os
-from functools import partial
 
-import qtawesome as qta
 from PyQt5 import QtGui, QtPrintSupport, QtWidgets
 from PyQt5.QtCore import QDir, QMimeData, QPoint, QSize, QUrl, Qt, pyqtSignal, pyqtSlot
-from PyQt5.QtGui import (QColor, QFont, QIcon, QImage, QResizeEvent, QTextCharFormat, QTextCursor, QTextFrameFormat,
-                         QTextLength)
+from PyQt5.QtGui import (QColor, QFont, QIcon, QImage, QResizeEvent, QTextCharFormat, QTextCursor, QTextDocument,
+                         QTextFrameFormat, QTextLength)
 from PyQt5.QtWidgets import (QAbstractItemView, QApplication, QDialog, QFileDialog, QFontDialog, QListWidgetItem,
                              QMainWindow, QMessageBox, QSystemTrayIcon)
 from PyQt5.uic import loadUi
+import qtawesome as qta
 
 from appsuite_api_wrapper.models.drive_extended_action import DriveExtendedAction
 from appsuite_api_wrapper.types import SynchronizationActionType
@@ -328,14 +328,29 @@ class MainWindow(QMainWindow):
     @pyqtSlot(name='on_action_preview_triggered')
     def on_action_preview_triggered(self):
         preview = QtPrintSupport.QPrintPreviewDialog()
-        preview.paintRequested.connect(lambda printer: self.text_edit_editor.print(printer))
+
+        preview_document: QTextDocument = QTextDocument()
+        preview_cursor: QTextCursor = QTextCursor(preview_document)
+        preview_cursor.movePosition(QTextCursor.Start)
+        preview_cursor.insertHtml('<h1>{}</h1><hr>'.format(self.line_edit_subject.text()))
+        preview_cursor.movePosition(QTextCursor.End)
+        preview_cursor.insertHtml(self.text_edit_editor.document().toHtml())
+
+        preview.paintRequested.connect(lambda printer: preview_document.print(printer))
         preview.exec()
 
     @pyqtSlot(name='on_action_print_note_triggered')
     def on_action_print_note_triggered(self):
         print_dialog = QtPrintSupport.QPrintDialog()
         if print_dialog.exec() == QDialog.Accepted:
-            self.text_edit_editor.document().print(print_dialog.printer())
+            print_document: QTextDocument = QTextDocument()
+            print_cursor: QTextCursor = QTextCursor(print_document)
+            print_cursor.movePosition(QTextCursor.Start)
+            print_cursor.insertHtml('<h1>{}</h1><hr>'.format(self.line_edit_subject.text()))
+            print_cursor.movePosition(QTextCursor.End)
+            print_cursor.insertHtml(self.text_edit_editor.document().toHtml())
+
+            print_document.print(print_dialog.printer())
 
     @pyqtSlot(name='on_action_edit_note_title_triggered')
     def on_action_edit_note_title_triggered(self):
