@@ -84,7 +84,7 @@ python3 oxnote/oxnote.py
 * By default log files will be written to .oxnote/logs, adjust the desired loglevel in configuration/logging.yaml
 
 ## <a name="author"></a>Author
-([@bartl3by](https://github.com/bartl3by))
+[@bartl3by](https://github.com/bartl3by)
 
 ## <a name="license"></a>License
 This project is licensed under GNU General Public License (GPL) v3, see the [LICENSE](LICENSE) file for details.
